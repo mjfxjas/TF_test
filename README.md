@@ -1,6 +1,6 @@
 # TF Test Sandbox
 
-A small Terraform sandbox for ZTF test deployments. It currently provisions a single Ubuntu EC2 instance in AWS so you can validate provider setup, workflows, and quick experiments without touching production infrastructure.
+Terraform sandbox that provisions one Ubuntu EC2 instance in AWS.
 
 ## What it creates
 - One EC2 instance (`t2.micro`) in `us-east-1`
@@ -31,6 +31,6 @@ terraform destroy
 These variables are not yet wired into `main.tf`. If you want to use them, update the resource block to reference `var.instance_name` and `var.instance_type`.
 
 ## Notes
-- This is a sandbox; expect breaking changes and quick experiments.
+- This configuration is for test deployments.
 - Terraform state files should not be committed. The repo already has `.gitignore` rules for `*.tfstate` and `*.tfstate.*`.
 - Running AWS resources incurs cost. Tear down with `terraform destroy` when finished.
